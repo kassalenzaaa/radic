@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # 检查参数
 if [ -z "\$1" ]; then
   echo "提交信息不能为空!"
@@ -8,7 +7,6 @@ fi
 
 # 获取远程仓库（推送地址）
 remote_repository=$(git remote -v | grep push | awk '{print \$1}')
-
 # 获取当前分支
 current_branch=$(git branch | grep '*' | awk '{print \$2}')
 
