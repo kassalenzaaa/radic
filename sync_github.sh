@@ -6,9 +6,16 @@ if [ -z "\$1" ]; then
 fi
 
 # 获取远程仓库（推送地址）
-remote_repository=$(git remote -v | grep push | awk '{print \$1}')
+remote_repository=$(git remote -v | grep push | cut -f1)
+# echo $remote_repository
+# exit 0
+
+
 # 获取当前分支
-current_branch=$(git branch | grep '*' | awk '{print \$2}')
+current_branch=$(git branch | grep '*' | cut -d' ' -f 2)
+# echo $current_branch
+# exit 0
+
 
 # 添加所有更改
 git add .
