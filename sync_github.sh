@@ -24,7 +24,7 @@ git config --global user.email "kassalenza@gamil.com"
 
 # 获取远程仓库（推送地址）
 remote_repository=$(git remote -v | grep push | cut -f1)
-# echo $remote_repository
+echo $remote_repository
 # exit 0
 # 如果没有远程仓库，则添加
 if [ -z "$remote_repository" ]; then
